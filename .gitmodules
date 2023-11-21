@@ -1,0 +1,3 @@
+[submodule "Alibaba/alibaba-fonts"]
+	path = Alibaba/alibaba-fonts
+	url = https://github.com/alibaba-fonts/alibaba-fonts.git
