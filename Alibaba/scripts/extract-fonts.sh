@@ -18,10 +18,17 @@ function extract_single_zip {
     unzip -o -d "$TEMPDIR" "$ZIP_FILE"
 
     # Find fonts in the temporary directory (otf & ttf), and copy them to target directories
-    find "$TEMPDIR" -type f -regextype posix-extended -regex '.*/[^.][^/]+\.otf$' \
-        -exec mkdir -p "$TARGET_OTF_DIR" \; -exec cp {} "$TARGET_OTF_DIR" \;
-    find "$TEMPDIR" -type f -regextype posix-extended -regex '.*/[^.][^/]+\.ttf$' \
-        -exec mkdir -p "$TARGET_TTF_DIR" \; -exec cp {} "$TARGET_TTF_DIR" \;
+    find "$TEMPDIR" -type f -regextype posix-extended -regex '.*/[^.][^/]+\.(otf|ttf)$' | {
+        while read -r FONT_FILE; do
+            if [[ "$FONT_FILE" =~ .*\.otf ]]; then
+                mkdir -p "$TARGET_OTF_DIR"
+                cp "$FONT_FILE" "$TARGET_OTF_DIR"
+            elif [[ "$FONT_FILE" =~ .*\.ttf ]]; then
+                mkdir -p "$TARGET_TTF_DIR"
+                cp "$FONT_FILE" "$TARGET_TTF_DIR"
+            fi
+        done
+    }
 
     # Clean up
     rm -rf "$TEMPDIR"
