@@ -24,4 +24,14 @@ function extract_single_zip {
     rm -rf "$TEMPDIR"
 }
 
-extract_single_zip "$1"
+function extract_all_zip {
+    local ZIP_DIR=$(realpath "$CURDIR/$FONTS_ZIP_DIR/")
+
+    find "$ZIP_DIR" -type f -name '*.zip' | {
+        while read -r ZIP_FILE; do
+            extract_single_zip "$ZIP_FILE"
+        done
+    }
+}
+
+extract_all_zip
