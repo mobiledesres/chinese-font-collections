@@ -7,7 +7,7 @@
     ```bash
     git submodule update --init --recursive
     ```
-2. Run the `extract-fonts.sh` script:
+2. Run the [**`scripts/extract-fonts.sh`**](./scripts/extract-fonts.sh) script:
 
     ```bash
     ./scripts/extract-fonts.sh
