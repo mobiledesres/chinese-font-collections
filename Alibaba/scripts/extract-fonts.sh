@@ -15,7 +15,7 @@ function extract_single_zip {
     local TARGET_TTF_DIR=$TARGET_DIR/ttf
 
     # Unzip fonts into the temporary directory
-    unzip -o -d "$TEMPDIR" "$ZIP_FILE"
+    unzip -q -o -d "$TEMPDIR" "$ZIP_FILE"
 
     # Find fonts in the temporary directory (otf & ttf), and copy them to target directories
     find "$TEMPDIR" -type f -regextype posix-extended -regex '.*/[^.][^/]+\.(otf|ttf)$' | {
