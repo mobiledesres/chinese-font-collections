@@ -35,7 +35,7 @@ function extract_single_zip {
 }
 
 function extract_all_zip {
-    local ZIP_DIR=$(realpath "$CURDIR/$FONTS_ZIP_DIR/")
+    local ZIP_DIR=$(realpath "$1")
 
     find "$ZIP_DIR" -type f -name '*.zip' | {
         while read -r ZIP_FILE; do
@@ -44,4 +44,4 @@ function extract_all_zip {
     }
 }
 
-extract_all_zip
+extract_all_zip "$CURDIR/$FONTS_ZIP_DIR"
