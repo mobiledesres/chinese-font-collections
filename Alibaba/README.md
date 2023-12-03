@@ -1,5 +1,10 @@
 # Alibaba fonts
 
+## Available fonts
+
+* [Alibaba PuHuiTi 阿里巴巴普惠体](https://fonts.alibabagroup.com/#/font)
+* [More free fonts 更多免费字体](https://fonts.alibabagroup.com/#/font)
+
 ## Extracting fonts
 
 1. Check out the [**alibaba-fonts/alibaba-fonts**](https://github.com/alibaba-fonts/alibaba-fonts) _submodule_:
