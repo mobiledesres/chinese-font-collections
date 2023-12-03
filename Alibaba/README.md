@@ -26,3 +26,5 @@ Run the [**`scripts/clean-up.sh`**](./scripts/clean-up.sh) to clean up:
 ```bash
 ./scripts/clean-up.sh
 ```
+
+This will remove the **`fonts`** directory.
