@@ -18,3 +18,13 @@
     ./scripts/extract-fonts.sh
     ```
 3. Then the fonts will be placed in the **`fonts`** directory.
+
+## Clean up extracted fonts
+
+Run the [**`scripts/clean-up.sh`**](./scripts/clean-up.sh) to clean up:
+
+```bash
+./scripts/clean-up.sh
+```
+
+This will remove the **`fonts`** directory.
